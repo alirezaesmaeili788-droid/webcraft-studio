@@ -1,0 +1,435 @@
+/*-- Colors --*/
+
+:root {
+    --primary: #1FAB89;
+    --primary-dark: #135242;
+    --primary-light: #62D2A2;
+    --mint: #e0fbec;
+    --mint-light: #f2f7f4;
+    --text-dark: #1A1A1A;
+}
+
+/*-- Home Page --*/
+body.Homepage-body{
+  background: #f6fbf8;   /* oder dein mint-light */
+}
+
+body.Homepage-body{
+  background-image: url("images/dotted.jpg");
+  background-repeat: repeat;
+  background-size: 220px auto;      
+}
+
+.hero-wrapper .container,
+.about-section .container{
+  background: rgba(255,255,255,0.85);  
+  border-radius: 24px;
+  padding: 18px;
+}
+
+
+.navbar {
+    background: var(--primary);
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+.nav-back {
+    background-image: linear-gradient(to bottom,var(--mint-light),#62d2a200);
+    height: 110px;
+
+}
+.navbar-brand {
+    font-weight: 500;
+    color: var(--mint-light);
+    font-size: 24px;
+    transition: 0.3s color;
+}
+
+.login-button {
+    background-color: var(--mint-light);
+    color: var(--primary-dark);
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: var(--primary-dark);
+    color: var(--mint-light);
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-item {
+    font-size: 20px;
+}
+
+.nav-link {
+    color: var(--mint-light);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: var(--primary-dark);
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: #116719;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link:active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/* HERO */
+
+.hero-grid{display:grid; gap:18px;}
+@media(min-width:992px){ .hero-grid{grid-template-columns: 1.25fr 0.75fr;} }
+
+.hero-card, .owner-card, .section-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.hero-card{
+  min-height: 520px;   /* anpassen falls du willst */
+}
+.hero-media, .owner-media{
+  height:220px;
+  background: linear-gradient(to bottom, var(--mint-light), #ffffff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-media img, .owner-media img{width:100%; height:100%; object-fit:cover;}
+
+.hero-body{padding:18px;}
+.hero-title{color:#1F5E3B; font-weight:900; margin:0;}
+.hero-text{color:var(--muted); margin:10px 0 0 0; line-height:1.6;}
+
+.search-pill{
+  border-radius:999px;
+  border:1px solid var(--border);
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  align-items:center;
+}
+.search-pill input{
+  border:0; outline:0; padding:12px 14px; flex:1;
+}
+.search-pill button{
+  border:0; padding:12px 18px; font-weight:800;
+  background: var(--primary-dark);
+  color: var(--mint-light);
+}
+.search-pill button:hover{opacity:.92;}
+
+.btn-soft{
+  border-radius:999px;
+  border:1px solid var(--primary-dark);
+  color: var(--primary-dark);
+  background: transparent;
+  font-weight:800;
+  padding:10px 16px;
+}
+.btn-soft:hover{background: var(--mint-light);}
+
+.badge-soft{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 10px; border-radius:14px;
+  background: rgba(98,210,162,.15);
+  color:#1F5E3B; font-weight:800; font-size:13px;
+}
+
+.section-wrap{
+  margin-top:22px;
+  background-image: linear-gradient(to bottom, var(--mint-light), #62d2a200);
+  border-radius:24px;
+  padding:22px;
+}
+
+.feature-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  height:100%;
+}
+.feature-title{margin:0; font-weight:900; color:#1F5E3B;}
+.feature-text{margin:8px 0 0 0; color:var(--muted); font-size:14px; line-height:1.6;}
+
+
+
+
+
+
+
+.hero-wrapper{
+  background-image: url("images/dotted.jpg");
+  background-repeat: repeat;
+  background-size: 220px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 0; /* falls nötig */
+}
+
+
+
+
+/*------------ Spots ------------*/
+
+.cards-holder {
+    margin-top: 4rem;
+}
+
+.place-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.place-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.rating-dots {
+    font-size: 0.9rem;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.tag {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.tag+.tag::before {
+    content: " · ";
+}
+
+.status-closed {
+    color: #d4004c;
+    font-weight: 500;
+}
+
+
+/* Popup-Overlay (unsichtbar, bis :target) */
+.spot-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+/* sichtbar, wenn die ID das Ziel ist (#... in URL) */
+.spot-modal:target {
+    display: flex;
+}
+
+/* Inhalt des Popups */
+.spot-modal-content {
+    background: #ffffff;
+    max-width: 800px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+}
+
+/* Close-Button */
+.spot-modal-close {
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #555;
+    float: right;
+}
+
+.spot-modal-close:hover {
+    color: #000;
+}
+
+
+
+
+
+/*------------ about ---------*/
+.footer {
+    background-color: #f0f7f3;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer h6,
+.footer h5 {
+    color: #116719;
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: #116719;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Kontakt Seite */
+.kontakt-body {
+    background-color: #f5f8f7;
+}
+
+/* Header oben */
+.contact-header {
+    background: linear-gradient(90deg, var(--hero-gradient-from), var(--hero-gradient-to));
+    color: #ffffff;
+    border-radius: 0 0 24px 24px;
+}
+
+.contact-header p {
+    color: #e8fcef;
+}
+
+/* Formular Card */
+.contact-card {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.contact-card .form-label {
+    font-weight: 500;
+    color: #116719;
+}
+
+.contact-card .form-control {
+    border-radius: 12px;
+}
+
+.contact-card button {
+    border-radius: 14px;
+}
+
+
+/*Nutzungsbediengunen*/
+
+
+*{ box-sizing:border-box }
+
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:#63977def;
+  color:var(--text);
+}
+
+.page-space{
+  padding-top:140px;
+  padding-bottom:60px;
+}
+
+.wrap{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  box-shadow:var(--shadow);
+  padding:32px;
+}
+
+.card h1{
+  color:#1F5E3B;
+  margin-bottom:6px;
+}
+
+.updated{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:24px;
+}
+
+.content{
+  margin-left: 30px;
+}
+
+
+.content h2{
+  margin-top:22px;
+  font-size:20px;
+  color:var(--primary-dark);
+}
+
+.content p{
+  color:#444;
+  line-height:1.6;
+  margin-top:6px;
+}
+
+.back-btn{
+  display:block;
+  margin-top:30px;
+  text-align:center;
+  border-radius:999px;
+}
